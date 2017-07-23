@@ -13,16 +13,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Glide.with(this)
-                .load("https://www.cesarsway.com/sites/newcesarsway/files/styles/large_article_preview/public/Common-dog-behaviors-explained.jpg?itok=FSzwbBoi")
-                .into(img_one)
-
-        val requestOptions = RequestOptions.formatOf(DecodeFormat.DEFAULT)
+        val requestOptions = RequestOptions
+                .placeholderOf(android.R.color.darker_gray)
+                .error(android.R.color.darker_gray)
+                .format(DecodeFormat.PREFER_ARGB_8888)
 
         Glide.with(this)
                 .setDefaultRequestOptions(requestOptions)
-                .asGif()
-                .load("https://upload-assets.vice.com/files/2016/09/01/1472761701GIPHY.gif")
-                .into(img_two)
+                .load("https://goo.gl/7kaJ3J")
+                .into(img_test)
     }
 }
